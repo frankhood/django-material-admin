@@ -70,12 +70,14 @@ INSTALLED_APPS = [
     'daterangefilter',
     'adminsortable2',
     'filefield_cache',
+    'ordered_model',
 
     'demo.countries',
     'demo.documents',
     'demo.relations',
     'demo.periods',
     'demo.profile',
+    'demo.ordered_models',
 ]
 
 MIDDLEWARE = [

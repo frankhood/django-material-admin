@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static cms_tags %}
+
+{% block css %}
+  {% block page_css %}{% endblock page_css %}
+{% endblock css %}
+
+{% block page_title %}{% page_attribute "page_title" %}{% endblock page_title %}
+
+{% block body_content %}
+  {% block header_content %}
+  {% endblock header_content %}
+  {% block main_content %}{% endblock main_content %}
+  {% block footer_content %}
+  {% endblock footer_content %}
+{% endblock body_content %}
+

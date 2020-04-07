@@ -24,7 +24,8 @@ class MaterialAdminSite(AdminSite):
 
     def register(self, model_or_iterable, admin_class=None, **options):
         if admin_class:
-            admin_class = type('admin_class', (MaterialModelAdminMixin, admin_class), {})
+            if MaterialModelAdminMixin not in admin_class.mro():
+                admin_class = type('admin_class', (MaterialModelAdminMixin, admin_class), {})
         return super().register(model_or_iterable, admin_class, **options)
 
     def __init__(self, name='material'):

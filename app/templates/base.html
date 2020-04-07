@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}" class="{% block html_class %}menu-open{% endblock html_class %}menu-open">
+<head>
+  {% load static i18n cms_tags sekizai_tags %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+  {% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'project/images/favicon-mbe.ico' %}">
+    {% comment %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="manifest" href="{% static 'project/images/favicon-mbe.ico' %}">
+    <link rel="mask-icon" href="{% static 'project/images/favicon-mbe.ico' %}" color="#00347B">
+    <meta name="msapplication-TileImage" content="{% static 'icons/mstile-150x150.png' %}">
+    <meta name="msapplication-TileColor" content="#00347B">
+    <meta name="theme-color" content="#ffffff">
+    {% endcomment %}
+  {% endblock favicon %}
+  <title>{% block page_title %}{% endblock page_title %} - Test Project</title>
+
+  {% block seo_metatags %}
+    {# page_meta request.current_page as meta #}
+    {# include 'djangocms_page_meta/seo_meta.html' with meta=meta #}
+
+    <meta name="description" content="">
+
+    {% block og_metatags %}
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Test Project" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.example.com/" />
+    <meta property="og:image" content="http://example.com/image.jpg" />
+    <meta property="og:description" content="Description Here" />
+    {% endblock og_metatags %}
+
+    {% block twitter_metatags %}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="Page Title">
+    <meta name="twitter:description" content="Page description less than 200 characters">
+    <meta name="twitter:creator" content="@author_handle">
+    <meta name="twitter:image" content="http://www.example.com/image.jpg">
+    {% endblock twitter_metatags %}
+  {% endblock seo_metatags %}
+
+  {% block fonts %}{% endblock fonts %}
+
+  {% block css %}
+  {% endblock css %}
+
+  {% block inline_css %}{% endblock inline_css %}
+
+  {% block js_head %}{% endblock js_head %}
+
+  {% render_block "css" %}
+  {% render_block "js" %}
+
+  {% block google_analytics_code %}
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{GOOGLE_TAG_MANAGER_CODE}}');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  {% endblock google_analytics_code %}
+
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{GOOGLE_TAG_MANAGER_CODE}}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  {% cms_toolbar %}
+
+  {% block pre_body_content %}
+  {% endblock pre_body_content %}
+
+  <div id="wrapper">
+    {% block body_content %}
+    {% endblock body_content %}
+  </div>
+
+  {% block js %}
+  {% endblock js %}
+
+</body>
+</html>

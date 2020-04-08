@@ -87,7 +87,7 @@
 {% endblock %}
 
 {% block side_nav %}
-    {% if not is_popup %}
+    {% if not is_popup  %}
     {% if not nav_bar_minimized %}
         <div id="side-bar" class="hide-on-med-and-down">
             {% include 'material/admin/side_nav.html' with available_apps=available_apps app=app %}
